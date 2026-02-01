@@ -1,0 +1,237 @@
+/* 🌌 RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* 🌌 BACKGROUND */
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.25), transparent 40%),
+    linear-gradient(135deg, #020024, #090979, #020024);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* 🧊 GLASS CARD */
+.container {
+  width: 430px;
+  max-width: 92%;
+  padding: 32px 28px;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 0 40px rgba(0, 255, 255, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+
+  text-align: center;
+  animation: slideUp 0.9s ease;
+}
+
+/* 🎯 TITLE */
+h1 {
+  font-size: 28px;
+  margin-bottom: 22px;
+  letter-spacing: 0.8px;
+}
+
+/* h1::after {
+  content: " AI Assistant";
+  color: #38bdf8;
+  font-weight: 600;
+} */
+
+/* 🎤 BUTTON AREA */
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0;
+}
+
+/* 🎤 MIC BUTTON */
+.mic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  font-size: 20px;
+  font-weight: 600;
+  color: #020024;
+
+  background: radial-gradient(circle, #67e8f9, #22d3ee);
+  box-shadow:
+    0 0 30px rgba(34, 211, 238, 0.8),
+    0 0 60px rgba(34, 211, 238, 0.5);
+
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+/* 🔊 PULSE RINGS */
+.mic::before,
+.mic::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 2px solid rgba(34, 211, 238, 0.6);
+   animation: pulse 2s infinite; 
+} 
+
+button::after {
+  inset: -35px;
+  animation-delay: 0.8s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 40px rgba(34, 211, 238, 1),
+    0 0 90px rgba(34, 211, 238, 0.8);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* 💬 CHAT BOX */
+.box {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 18px;
+
+  background: rgba(2, 6, 23, 0.65);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.6;
+
+  /* 🔹 SCROLLING FIX */
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+/* 🔹 Smooth scrollbar (Chrome) */
+.box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.box::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.6);
+  border-radius: 10px;
+}
+
+.box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+/* 👤 TEXT */
+.box p {
+  margin-bottom: 12px;
+}
+
+.box strong {
+  color: #22d3ee;
+}
+
+/* ✨ ANIMATIONS */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 480px) {
+  button {
+    width: 140px;
+    height: 140px;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+/* 💬 INPUT AREA */
+.input-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 15px;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.input-area input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* 🚀 SEND BUTTON */
+.send-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #22d3ee, #38bdf8);
+  color: #020024;
+  font-size: 18px;
+  font-weight: bold;
+
+ 
+ 
+}
+
+.send-btn:hover {
+  transform: scale(1.08);
+}
+
+.send-btn:active {
+  transform: scale(0.95);
+}

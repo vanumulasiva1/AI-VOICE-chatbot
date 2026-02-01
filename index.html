@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Voice Bot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+  <h1>🎙️ My Smart Assistant</h1>
+
+  <!-- 🔹 Text Input -->
+  <div class="input-area">
+    <input
+      type="text"
+      id="textInput"
+      placeholder="Type your question here..."
+      onkeydown="if(event.key==='Enter') sendText()"
+    />
+    <button class="send-btn" onclick="sendText()">➤</button>
+  </div>
+
+  <!-- 🔹 Voice Button -->
+  <div class="buttons">
+    <button class="mic" onclick="startListening()">🎤</button>
+  </div>
+
+  <!-- 🔹 Chat Box -->
+  <div class="box">
+    <p><strong>You:</strong> <span id="userText"></span></p>
+    <p><strong>AI:</strong> <span id="aiText"></span></p>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+
+
+</html>
+
