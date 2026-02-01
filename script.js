@@ -28,7 +28,7 @@ function sendText() {
 async function handleUserQuestion(text) {
   document.getElementById("userText").innerText = text;
 
-  const response = await fetch("http://localhost:3001/chat", {
+  const response = await fetch("https://ai-voice-chatbot-j894.onrender.com/chat", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message: text })
@@ -61,6 +61,7 @@ function sendText() {
   handleUserQuestion(text);
   input.value = "";
 }
+
 
 
 
